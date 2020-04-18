@@ -8,14 +8,18 @@ public class Animal {
     File pic;
     private Double weight;
 
+    static final Double DEFAULT_DOG_WEIGHT = 11.0;
+    static final Double DEFAULT_LION_WEIGHT = 11.0;
+    static final Double DEFAULT_OTHER_WEIGHT = 11.0;
+
     public Animal(String species) {
         this.species = species;
-        if (species == "Dog") {
-            weight = 10.0;
-        } else if (species == "Lion") {
-            weight = 180.0;
+        if (species.equals("Dog")) {
+            weight = DEFAULT_DOG_WEIGHT;
+        } else if (species.equals("Lion")) {
+            weight = DEFAULT_LION_WEIGHT;
         } else {
-            weight = 1.0;
+            weight = DEFAULT_OTHER_WEIGHT;
         }
 
     }
