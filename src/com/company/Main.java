@@ -19,7 +19,7 @@ public class Main {
         me.pet.takeForAWalk();
         me.pet.takeForAWalk();
 
-        System.out.println(me.pet.species);
+        System.out.println(me.pet.getWeight());
         System.out.println("Moje auto to: " + me.car.producent);
         System.out.println("Model auta to: " + me.car.model);
     }
