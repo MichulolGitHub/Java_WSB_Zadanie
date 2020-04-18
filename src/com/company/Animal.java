@@ -21,7 +21,27 @@ public class Animal {
     }
 
     void feed() {
-        weight += 0.1;
-        System.out.println("Thx bro, my weight is now " + weight);
+        if (weight <= 0.0) {
+
+            System.out.println("Za późno na karmienie...");
+        } else {
+            weight += 0.1;
+            System.out.println("Dzięki za karme, moja aktualna waga to: " + weight);
+        }
+
+
     }
+
+    void takeForAWalk() {
+        if (weight <= 0.0) {
+            System.out.println("Zwierze nie zyje... Nie mozna wyjsc z nim na spacer. ");
+        } else if (weight <= 1.0) {
+            weight -= 0.1;
+            System.out.println("Po wyjsciu jestem glodny. Moja aktualna waga to: " + weight);
+        } else {
+            weight -= 0.1;
+            System.out.println("Dzieki za wyjscie. Moja aktualna waga to: " + weight);
+        }
+    }
+
 }
