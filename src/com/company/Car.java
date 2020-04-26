@@ -4,14 +4,8 @@ public class Car {
     final String model;
     final String producent;
     private Double milage;
+    final Double value;
 
-
-    public Car(String producent, String model) {
-
-        this.model = model;
-        this.producent = producent;
-
-    }
 
     public Double getMilage() {
         return milage;
@@ -19,5 +13,12 @@ public class Car {
 
     public void setMilage(Double milage) {
         this.milage = milage;
+    }
+
+
+    public Car(String producent, String model, double value) {
+        this.model = model;
+        this.producent = producent;
+        this.value = value;
     }
 }

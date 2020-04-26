@@ -8,7 +8,6 @@ public class Main {
         me.firstName = "Marek";
         me.lastName = "Kowalski";
         me.pet = new Animal("cat");
-        me.car = new Car("Audi", "A7");
 
 
         me.pet.feed();
@@ -20,12 +19,16 @@ public class Main {
         me.pet.takeForAWalk();
 
         System.out.println(me.pet.getWeight());
-        System.out.println("Moje auto to: " + me.car.producent);
-        System.out.println("Model auta to: " + me.car.model);
+
 
         System.out.println("---------------ZADANIE 3 i 4---------------");
         me.setSalary(10321); // Ustawianie nowej pensji
         me.getSalary();  // Wypisywanie aktualnej pensji
+
+        System.out.println("---------------ZADANIE 5---------------");
+        me.setCar(new Car("Audi", "A7", 100000));
+        System.out.println(me.getCar().model + " " + me.getCar().producent);
+
 
     }
 }
