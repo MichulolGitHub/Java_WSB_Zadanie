@@ -22,5 +22,10 @@ public class Main {
         System.out.println(me.pet.getWeight());
         System.out.println("Moje auto to: " + me.car.producent);
         System.out.println("Model auta to: " + me.car.model);
+
+        System.out.println("---------------ZADANIE 3 i 4---------------");
+        me.setSalary(10321); // Ustawianie nowej pensji
+        me.getSalary();  // Wypisywanie aktualnej pensji
+
     }
 }
