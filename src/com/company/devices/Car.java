@@ -1,10 +1,9 @@
-package com.company;
+package com.company.devices;
 
-public class Car {
-    final String model;
-    final String producent;
+public class Car extends Device {
+
     private Double milage;
-    final Double value;
+    public final Double value;
 
 
     public Double getMilage() {

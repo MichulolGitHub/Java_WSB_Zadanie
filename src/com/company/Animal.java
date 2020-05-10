@@ -6,7 +6,7 @@ public class Animal {
     final String species;
     String name;
     File pic;
-    private Double weight;
+    protected Double weight;
 
     static final Double DEFAULT_DOG_WEIGHT = 11.0;
     static final Double DEFAULT_LION_WEIGHT = 11.0;
