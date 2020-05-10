@@ -62,6 +62,10 @@ public class Human extends Animal {
 
     }
 
+    public void sell() throws Exception {
+        throw new Exception("Nie mozliwa jest sprzedaz");
+    }
+
 }
 
 

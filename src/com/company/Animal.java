@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Saleable {
     final String species;
     String name;
     File pic;
@@ -54,4 +54,8 @@ public class Animal {
         return weight;
     }
 
+
+    public void sell() throws Exception {
+
+    }
 }

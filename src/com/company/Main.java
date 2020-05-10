@@ -42,15 +42,24 @@ public class Main {
         System.out.println(me.species);
         me.feed();
         me.takeForAWalk();
-        System.out.println(me instanceof Human);
-        System.out.println(me instanceof Animal);
-        System.out.println(me instanceof Object);
+//        System.out.println(me instanceof Human);
+//        System.out.println(me instanceof Animal);
+//        System.out.println(me instanceof Object);
 
         System.out.println("----------------------------------");
-        Phone nokia = new Phone();
-        nokia.setProducent("Nokia");
-        nokia.setModel("3310");
-        System.out.println(nokia.toString());
+        Phone nokia = new Phone("3310", "Nokia", 5);
+        Car audi = new Car("Audi", "A7", 2582);
+
+        System.out.println(nokia);
+        System.out.println(audi);
+
+        System.out.println("----------------------------------");
+
+        try {
+            me.pet.sell();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }

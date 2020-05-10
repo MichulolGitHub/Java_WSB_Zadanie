@@ -16,8 +16,12 @@ public class Car extends Device {
 
 
     public Car(String producent, String model, double value) {
-        this.model = model;
-        this.producent = producent;
+        super(producent, model);
         this.value = value;
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Car is working");
     }
 }
