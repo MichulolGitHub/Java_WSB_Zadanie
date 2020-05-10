@@ -32,7 +32,7 @@ public class Main {
         me.setCar(new Car("Audi", "A7", 100000));
         System.out.println(me.getCar().model + " " + me.getCar().producent);
 
-//        System.out.println("---------------ZADANIE 6/do poprawy---------------");
+//        System.out.println("---------------ZADANIE 6/do poprawy--------------");
 //        Human myWife = new Human();
 //        myWife.firstName = "Karolina";
 //        myWife.lastName = "Kowalski";
