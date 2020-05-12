@@ -1,25 +1,22 @@
 package com.company.devices;
 
-import com.company.Saleable;
-
-public abstract class Device implements Saleable {
+public abstract class Device {
     public String producent;
     public String model;
+    public int yearOfProduction;
 
-    public Device(String producent, String model) {
+    public Device(String producent, String model, int yearOfProduction) {
         this.producent = producent;
         this.model = model;
+        this.yearOfProduction = yearOfProduction;
     }
 
 
     public String toString() {
-        return producent + " " + model;
+        return producent + " " + model + " " + yearOfProduction;
     }
 
     abstract public void turnOn();
 
-    public void sell() {
-        System.out.println("You sold " + this.toString());
-    }
 
 }

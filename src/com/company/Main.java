@@ -29,7 +29,7 @@ public class Main {
         me.getSalary();  // Wypisywanie aktualnej pensji
 
         System.out.println("---------------ZADANIE 5---------------");
-        me.setCar(new Car("Audi", "A7", 100000));
+        me.setCar(new Car("Audi", "A7", 2010, 300));
         System.out.println(me.getCar().model + " " + me.getCar().producent);
 
 //        System.out.println("---------------ZADANIE 6/do poprawy--------------");
@@ -38,7 +38,7 @@ public class Main {
 //        myWife.lastName = "Kowalski";
 //        myWife.setCar(new Car("Audi","A7",100000));
 
-        System.out.println("---------------ZADANIE 7---------------");
+        System.out.println("---------------ZADANIE NA LECKJI---------------");
         System.out.println(me.species);
         me.feed();
         me.takeForAWalk();
@@ -46,20 +46,12 @@ public class Main {
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Object);
 
-        System.out.println("----------------------------------");
-        Phone nokia = new Phone("3310", "Nokia", 5);
-        Car audi = new Car("Audi", "A7", 2582);
+        System.out.println("---------------ZADANIE 7-------------------");
+        Phone nokia = new Phone("3310", "Nokia", 5.5, 2010);
+        Car audi = new Car("Audi", "A7", 2010, 25);
 
         System.out.println(nokia);
         System.out.println(audi);
-
-        System.out.println("----------------------------------");
-
-        try {
-            me.pet.sell();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
     }

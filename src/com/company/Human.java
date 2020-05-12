@@ -10,6 +10,8 @@ public class Human extends Animal {
     Animal pet;
     private Car car;
     private Double salary;
+    public Double cash = 300.0;
+
 
     public Human() {
         super("homo sapiens");

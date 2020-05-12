@@ -15,8 +15,8 @@ public class Car extends Device {
     }
 
 
-    public Car(String producent, String model, double value) {
-        super(producent, model);
+    public Car(String producent, String model, int yearOfProduction, double value) {
+        super(producent, model, yearOfProduction);
         this.value = value;
     }
 
