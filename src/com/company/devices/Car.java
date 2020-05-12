@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Car extends Device {
 
     private Double milage;
@@ -23,5 +25,23 @@ public class Car extends Device {
     @Override
     public void turnOn() {
         System.out.println("Car is working");
+    }
+
+
+    @Override
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+        if (seller.getCar() == this) {
+            if (seller.cash >= price) {
+                buyer.cash -= price;
+                buyer.setCar(this);
+                seller.setCar(null);
+                seller.cash += price;
+                System.out.println("Gratulacje transakcji.");
+            } else {
+                System.out.println("Brak kasy.");
+            }
+        } else {
+            System.out.println("Sprzedawca nie ma auta ");
+        }
     }
 }

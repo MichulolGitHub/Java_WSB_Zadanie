@@ -6,7 +6,7 @@ import com.company.devices.Phone;
 public class Human extends Animal {
     String firstName;
     String lastName;
-    Phone phone;
+    public Phone phone;
     Animal pet;
     private Car car;
     private Double salary;

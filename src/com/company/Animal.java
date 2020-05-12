@@ -55,21 +55,25 @@ public class Animal implements Saleable {
     }
 
 
-//    public void sell(Human buyer, Human seller, Double price) throws Exception {
-//if (this instanceof Human){
-//    throw new Exception("No slavery!!!");
-//} else{
-//    if(buyer.cash < price){
-//        throw new Exception("not enought cash");
-//    }
-//    if(seller.pet -= this){
-//        throw new Exception("Nie mozna sprzedac")
-//    }
-//    buyer.cash -= price;
-//    seller.cash += price;
-//    buyer.pet = this;
-//    seller.pet = null;
-//    System.out.println(buyer.firstName + "already bought " + this.);
-//}
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("Nie sprzedajemy ludzi!!");
+        } else {
+            if (buyer.cash < price) {
+                throw new Exception("Kupujacego nie stac.");
+            }
+            if (seller.pet != this) {
+                throw new Exception("Sprzedawca nie posiada zwierzaka na sprzedaz.");
+            }
+            buyer.cash -= price;
+            seller.cash += price;
+            buyer.pet = seller.pet;
+            seller.pet = null;
+            System.out.println(buyer.firstName + " zakupil od " + seller.firstName + " " + buyer.pet);
+        }
+
+
+    }
+
 }
 

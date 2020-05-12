@@ -5,7 +5,7 @@ import com.company.devices.Phone;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Human me = new Human();
         me.firstName = "Marek";
@@ -54,5 +54,45 @@ public class Main {
         System.out.println(audi);
 
 
+        System.out.println("---------------ZADANIE 8-------------------");
+
+        Human kupujacy = new Human();
+        kupujacy.firstName = "Rychu";
+        kupujacy.lastName = "Kowalski";
+        kupujacy.cash = 2500.0;
+        Phone telefonkkupujacy = new Phone("X", "Iphone", 5.1, 2018);
+        kupujacy.phone = telefonkkupujacy;
+
+        Human sprzedajacy = new Human();
+        sprzedajacy.firstName = "Andrzej";
+        sprzedajacy.lastName = "Duda";
+        sprzedajacy.pet = new Animal("gąsienica");
+        sprzedajacy.cash = 25.0;
+        Animal petsprzedawcy = new Animal("gąsienica");
+        sprzedajacy.pet = petsprzedawcy;
+
+
+        System.out.println("PRZED SPRZEDAZA (SPRAWDZENIE):");
+        System.out.println("ilosc kasy sprzedawcy: " + sprzedajacy.cash);
+        System.out.println("ilosc kasy kupujacego: " + kupujacy.cash);
+
+        System.out.println("Zwierzak sprzedawcy: " + sprzedajacy.pet.toString());
+//        System.out.println("Zwierzak kupujacego: " + kupujacy.pet.toString());
+
+        System.out.println("SPRZEDAZ:");
+        petsprzedawcy.sell(kupujacy, sprzedajacy, 100.5);
+
+        System.out.println("PO SPRZEDAZY:");
+        System.out.println("ilosc kasy sprzedawcy: " + sprzedajacy.cash);
+        System.out.println("ilosc kasy kupujacego: " + kupujacy.cash);
+
+//        System.out.println("Zwierzak sprzedawcy: " + sprzedajacy.pet.toString());
+        System.out.println("Zwierzak kupujacego: " + kupujacy.pet.toString());
+
+        System.out.println("SPRZEDAZ TELEFONU OD KUPUJACEGO DO SPRZEDAWCY:");
+        telefonkkupujacy.sell(sprzedajacy, kupujacy, 255.5);
+        System.out.println("Telefon sprzedajacego (aktualny wlasciciel po kupnie): " + sprzedajacy.phone.toString());
+        System.out.println("ilosc kasy sprzedawcy: " + sprzedajacy.cash);
+        System.out.println("ilosc kasy kupujacego: " + kupujacy.cash);
     }
 }
