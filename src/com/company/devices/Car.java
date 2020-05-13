@@ -44,4 +44,11 @@ public class Car extends Device {
             System.out.println("Sprzedawca nie ma auta ");
         }
     }
+
+    //abstract
+    void refuel() {
+
+    }
+
+
 }

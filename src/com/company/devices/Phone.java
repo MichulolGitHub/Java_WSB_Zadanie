@@ -4,6 +4,9 @@ import com.company.Human;
 
 public class Phone extends Device {
     public Double screenSize;
+    static final String serverAddress = "xyz.local";
+    static final int serverPort = 4345;
+    static final double versionApp = 1.1;
 
 
     public Phone(String model, String producer, double screenSize, int yearOfProduction) {
@@ -35,5 +38,6 @@ public class Phone extends Device {
         }
     }
 
+    public void installAnApp()
 
 }
