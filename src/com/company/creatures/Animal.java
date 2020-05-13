@@ -1,8 +1,11 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Human;
+import com.company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
+public abstract class Animal implements Saleable, Edbile, Feedable {
     final String species;
     String name;
     File pic;
@@ -24,7 +27,7 @@ public class Animal implements Saleable {
 
     }
 
-    void feed() {
+    public void feed() {
         if (weight <= 0.0) {
 
             System.out.println("Za późno na karmienie...");
@@ -36,7 +39,7 @@ public class Animal implements Saleable {
 
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if (weight <= 0.0) {
             System.out.println("Zwierze nie zyje... Nie mozna wyjsc z nim na spacer. ");
         } else if (weight <= 1.0) {
@@ -75,5 +78,13 @@ public class Animal implements Saleable {
 
     }
 
+
+    @Override
+    public void beEaten() {
+
+    }
+
 }
+
+
 

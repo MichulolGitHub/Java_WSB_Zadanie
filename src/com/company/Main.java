@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -10,7 +12,12 @@ public class Main {
         Human me = new Human();
         me.firstName = "Marek";
         me.lastName = "Kowalski";
-        me.pet = new Animal("cat");
+        me.pet = new Animal("cat") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
 
 
         me.pet.feed();
@@ -39,9 +46,9 @@ public class Main {
 //        myWife.setCar(new Car("Audi","A7",100000));
 
         System.out.println("---------------ZADANIE NA LECKJI---------------");
-        System.out.println(me.species);
-        me.feed();
-        me.takeForAWalk();
+//        System.out.println(me.species);
+//        me.feed();
+//        me.takeForAWalk();
 //        System.out.println(me instanceof Human);
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Object);
@@ -66,9 +73,19 @@ public class Main {
         Human sprzedajacy = new Human();
         sprzedajacy.firstName = "Andrzej";
         sprzedajacy.lastName = "Duda";
-        sprzedajacy.pet = new Animal("gąsienica");
+        sprzedajacy.pet = new Animal("gąsienica") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         sprzedajacy.cash = 25.0;
-        Animal petsprzedawcy = new Animal("gąsienica");
+        Animal petsprzedawcy = new Animal("gąsienica") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         sprzedajacy.pet = petsprzedawcy;
 
 
@@ -89,10 +106,31 @@ public class Main {
 //        System.out.println("Zwierzak sprzedawcy: " + sprzedajacy.pet.toString());
         System.out.println("Zwierzak kupujacego: " + kupujacy.pet.toString());
 
-        System.out.println("SPRZEDAZ TELEFONU OD KUPUJACEGO DO SPRZEDAWCY:");
-        telefonkkupujacy.sell(sprzedajacy, kupujacy, 255.5);
-        System.out.println("Telefon sprzedajacego (aktualny wlasciciel po kupnie): " + sprzedajacy.phone.toString());
-        System.out.println("ilosc kasy sprzedawcy: " + sprzedajacy.cash);
-        System.out.println("ilosc kasy kupujacego: " + kupujacy.cash);
+
+//        BRAK KASY do przedniego zadania
+//        System.out.println("SPRZEDAZ TELEFONU OD KUPUJACEGO DO SPRZEDAWCY:");
+//        telefonkkupujacy.sell(sprzedajacy, kupujacy, 255.5);
+//        System.out.println("Telefon sprzedajacego (aktualny wlasciciel po kupnie): " + sprzedajacy.phone.toString());
+//        System.out.println("ilosc kasy sprzedawcy: " + sprzedajacy.cash);
+//        System.out.println("ilosc kasy kupujacego: " + kupujacy.cash);
+
+
+        System.out.println("---------------ZADANIE 9-------------------");
+
+        Animal snake = new Animal("snake") {
+
+            @Override
+            public void feed(Double foodWeight) {
+            }
+
+        };
+        snake.feed(1.5);
+
+
+        FarmAnimal pig = new FarmAnimal("pig");
+        pig.feed(200.5);
+
+        pig.beEaten();
+
     }
 }

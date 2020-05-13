@@ -1,13 +1,15 @@
 package com.company;
 
+import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Human extends Animal {
-    String firstName;
+    public Animal pet;
+    public String firstName;
     String lastName;
     public Phone phone;
-    Animal pet;
+
     private Car car;
     private Double salary;
     public Double cash = 300.0;
@@ -68,6 +70,10 @@ public class Human extends Animal {
         throw new Exception("Nie mozliwa jest sprzedaz");
     }
 
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }
 
 
