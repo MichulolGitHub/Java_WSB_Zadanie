@@ -6,7 +6,15 @@ public class LPG extends Car {
     }
 
     @Override
-    void refuel() {
+    public void refuel() {
+        double tankowanie = 100 - fuel;
+        fuel = fuel + tankowanie;
 
+        System.out.println("LPG z kuchenki zatankowane");
+
+    }
+
+    public void getFuel() {
+        System.out.println(fuel);
     }
 }

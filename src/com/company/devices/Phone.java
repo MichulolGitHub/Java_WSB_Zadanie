@@ -38,6 +38,10 @@ public class Phone extends Device {
         }
     }
 
-    public void installAnApp()
+//    public void installAnApp(int versionApp){
+////        this.versionApp = versionApp;
+////
+////    }
+
 
 }

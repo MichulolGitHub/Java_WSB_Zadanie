@@ -2,11 +2,16 @@ package com.company.devices;
 
 import com.company.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
 
     private Double milage;
     public final Double value;
+    public double fuel = 10.1;
 
+
+    public Double getfuel() {
+        return fuel;
+    }
 
     public Double getMilage() {
         return milage;
@@ -46,9 +51,7 @@ public class Car extends Device {
     }
 
     //abstract
-    void refuel() {
-
-    }
+    public abstract void refuel();
 
 
 }

@@ -3,6 +3,7 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.devices.Car;
+import com.company.devices.LPG;
 import com.company.devices.Phone;
 
 public class Main {
@@ -36,7 +37,13 @@ public class Main {
         me.getSalary();  // Wypisywanie aktualnej pensji
 
         System.out.println("---------------ZADANIE 5---------------");
-        me.setCar(new Car("Audi", "A7", 2010, 300));
+        me.setCar(new Car("Audi", "A7", 2010, 300) {
+            @Override
+            public void refuel() {
+
+
+            }
+        });
         System.out.println(me.getCar().model + " " + me.getCar().producent);
 
 //        System.out.println("---------------ZADANIE 6/do poprawy--------------");
@@ -55,7 +62,13 @@ public class Main {
 
         System.out.println("---------------ZADANIE 7-------------------");
         Phone nokia = new Phone("3310", "Nokia", 5.5, 2010);
-        Car audi = new Car("Audi", "A7", 2010, 25);
+        Car audi = new Car("Audi", "A7", 2010, 25) {
+            @Override
+            public void refuel() {
+
+
+            }
+        };
 
         System.out.println(nokia);
         System.out.println(audi);
@@ -131,6 +144,16 @@ public class Main {
         pig.feed(200.5);
 
         pig.beEaten();
+
+
+        System.out.println("---------------ZADANIE 10-------------------");
+
+
+        LPG Golf = new LPG("Golf", "IV", 1998, 1000000);
+        Golf.getFuel();
+        Golf.refuel();
+        Golf.getFuel();
+
 
     }
 }
