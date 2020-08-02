@@ -1,12 +1,11 @@
 package com.company.devices;
 
-import com.company.Human;
-
 public abstract class Car extends Device {
 
     private Double milage;
     public final Double value;
     public double fuel = 10.1;
+
 
 
     public Double getfuel() {
@@ -33,22 +32,22 @@ public abstract class Car extends Device {
     }
 
 
-    @Override
-    public void sell(Human buyer, Human seller, Double price) throws Exception {
-        if (seller.getCar() == this) {
-            if (seller.cash >= price) {
-                buyer.cash -= price;
-                buyer.setCar(this);
-                seller.setCar(null);
-                seller.cash += price;
-                System.out.println("Gratulacje transakcji.");
-            } else {
-                System.out.println("Brak kasy.");
-            }
-        } else {
-            System.out.println("Sprzedawca nie ma auta ");
-        }
-    }
+//    @Override
+//    public void sell(Human buyer, Human seller, Double price) throws Exception {
+//        if (seller.getCar() == this) {
+//            if (seller.cash >= price) {
+//                buyer.cash -= price;
+//                buyer.setCar(this);
+//                seller.setCar(null);
+//                seller.cash += price;
+//                System.out.println("Gratulacje transakcji.");
+//            } else {
+//                System.out.println("Brak kasy.");
+//            }
+//        } else {
+//            System.out.println("Sprzedawca nie ma auta ");
+//        }
+//    }
 
     //abstract
     public abstract void refuel();

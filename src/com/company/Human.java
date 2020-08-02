@@ -4,21 +4,42 @@ import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+
 public class Human extends Animal {
     public Animal pet;
     public String firstName;
     String lastName;
     public Phone phone;
 
-    private Car car;
+    public Car[] garage;
+
+
     private Double salary;
     public Double cash = 300.0;
 
 
-    public Human() {
+    public Human(String firstName, String lastName, int numberParking) {
+
         super("homo sapiens");
         this.weight = 80.0;
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.garage = new Car[numberParking];
+
+
     }
+
+    public void getValueALLCars() {
+        Double allCarsValue = 0.0;
+        for (Car car : this.garage) {
+            if (car != null)
+                allCarsValue += car.value;
+
+        }
+        System.out.println("Total Value of all your cars:" + allCarsValue);
+    }
+
 
     public void getSalary() {
 
@@ -46,22 +67,25 @@ public class Human extends Animal {
     }
 
 
-    public Car getCar() {
-        return car;
+    public void getCar(int numberParking) {
+        System.out.println(this.garage[numberParking]);
+
     }
 
-    public void setCar(Car car) {
+    public void setCar(Car car, int numberParking) {
+        this.garage[numberParking] = car;
 
-        if (car.value <= this.salary) {
-            System.out.println("Zakupiles auto za gotówkę.");
-            this.car = car;
-        } else if (car.value <= this.salary * 12) {
-            System.out.println("Auto zakupione za pomoca kredytu.");
-            this.car = car;
-        } else {
-            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-
-        }
+//
+//        if (car.value <= this.salary) {
+//            System.out.println("Zakupiles auto za gotówkę.");
+//            this.car = car;
+//        } else if (car.value <= this.salary * 12) {
+//            System.out.println("Auto zakupione za pomoca kredytu.");
+//            this.car = car;
+//        } else {
+//            System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+//
+//        }
 
 
     }
@@ -74,6 +98,8 @@ public class Human extends Animal {
     public void feed(Double foodWeight) {
 
     }
+
+
 }
 
 
