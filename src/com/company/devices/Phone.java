@@ -4,9 +4,9 @@ import com.company.Human;
 
 public class Phone extends Device {
     public Double screenSize;
-    static final String serverAddress = "xyz.local";
-    static final int serverPort = 4345;
-    static final double versionApp = 1.1;
+    static final String SERVERADDRESS = "xyz.local";
+    static final int SERVERPORT = 4345;
+    static final double VERSIONAPP = 1.1;
     String nameOfApliaction = "XYZ";
 
 
