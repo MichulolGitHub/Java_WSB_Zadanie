@@ -7,6 +7,7 @@ public class Phone extends Device {
     static final String serverAddress = "xyz.local";
     static final int serverPort = 4345;
     static final double versionApp = 1.1;
+    String nameOfApliaction = "XYZ";
 
 
     public Phone(String model, String producer, double screenSize, int yearOfProduction) {
@@ -38,10 +39,35 @@ public class Phone extends Device {
         }
     }
 
-//    public void installAnApp(int versionApp){
-////        this.versionApp = versionApp;
-////
-////    }
+    public void installAnApp(String nameOfApliaction) {
 
+        System.out.println("Only name of Aplication");
+    }
+
+    public void installAnAPP(String nameOfApliaction, double versionApp) {
+
+        System.out.println("Name of Aplication + Version App");
+    }
+
+    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress) {
+
+        System.out.println("Name of Aplication + Version App + server address");
+    }
+
+    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort) {
+
+        System.out.println("Name of Aplication + Version App + server address + server port");
+    }
+
+    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort, URL url) {
+
+        System.out.println("Name of Aplication + Version App + server address + server port + url");
+    }
+
+    class URL {
+
+    }
 
 }
+
+
