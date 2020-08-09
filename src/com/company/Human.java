@@ -4,6 +4,8 @@ import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.util.Arrays;
+
 
 public class Human extends Animal {
     public Animal pet;
@@ -72,6 +74,14 @@ public class Human extends Animal {
 
     }
 
+    public void getAllCars() {
+        int tempGarageLenght = this.garage.length;
+        for (int i = 0; i < tempGarageLenght; i++) {
+            int tempnumber = i + 1;
+            System.out.println(tempnumber + ". " + this.garage[i]);
+        }
+    }
+
     public void setCar(Car car, int numberParking) {
         this.garage[numberParking] = car;
 
@@ -99,6 +109,21 @@ public class Human extends Animal {
 
     }
 
+
+    //
+    public void sortCars() {
+        Arrays.sort(this.garage, (a, b) -> {
+            Integer aValue = Integer.MAX_VALUE;
+            Integer bValue = Integer.MAX_VALUE;
+            if (a != null)
+                aValue = a.getYearOfProduction();
+            if (b != null)
+                bValue = b.getYearOfProduction();
+            return aValue - bValue;
+        });
+    }
+
+//
 
 }
 

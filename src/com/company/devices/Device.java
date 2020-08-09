@@ -21,5 +21,7 @@ public abstract class Device implements Saleable {
 
     abstract public void turnOn();
 
-
+    public Integer getYearOfProduction() {
+        return yearOfProduction;
+    }
 }

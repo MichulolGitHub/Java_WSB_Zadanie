@@ -13,6 +13,7 @@ public class Electric extends Car {
 
     }
 
+
     public void getFuel() {
         System.out.println(fuel);
     }

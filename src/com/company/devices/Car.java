@@ -33,7 +33,10 @@ public abstract class Car extends Device {
 
 
 //    @Override
-//    public void sell(Human buyer, Human seller, Double price) throws Exception {
+//    public void sell(Human seller, Human buyer, Double price) throws Exception {
+//
+//
+//
 //        if (seller.getCar() == this) {
 //            if (seller.cash >= price) {
 //                buyer.cash -= price;

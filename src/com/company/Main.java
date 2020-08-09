@@ -2,9 +2,9 @@ package com.company;
 
 import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
-import com.company.devices.Car;
+import com.company.devices.Diesel;
+import com.company.devices.Electric;
 import com.company.devices.LPG;
-import com.company.devices.Phone;
 
 public class Main {
 
@@ -60,18 +60,18 @@ public class Main {
 //        System.out.println(me instanceof Animal);
 //        System.out.println(me instanceof Object);
 
-        System.out.println("---------------ZADANIE 7-------------------");
-        Phone nokia = new Phone("3310", "Nokia", 5.5, 2010);
-        Car audi = new Car("Audi", "A7", 2010, 25) {
-            @Override
-            public void refuel() {
-
-
-            }
-        };
-
-        System.out.println(nokia);
-        System.out.println(audi);
+//        System.out.println("---------------ZADANIE 7-------------------");
+//        Phone nokia = new Phone("3310", "Nokia", 5.5, 2010);
+//        Car audi = new Car("Audi", "A7", 2010, 25) {
+//            @Override
+//            public void refuel() {
+//
+//
+//            }
+//        };
+//
+//        System.out.println(nokia);
+//        System.out.println(audi);
 
 
 //        System.out.println("---------------ZADANIE 8-------------------");
@@ -163,9 +163,18 @@ public class Main {
         Tomek.getCar(0);
         Tomek.setCar(new LPG("test2", "test2", 2015, 11.0), 1);
         Tomek.getCar(1);
+        Tomek.setCar(new Electric("test2", "test2", 2020, 11.0), 2);
+        Tomek.getCar(2);
+        Tomek.setCar(new Diesel("test2", "test2", 2013, 11.0), 3);
+        Tomek.getCar(3);
 
+        System.out.println("---TOTAL COST---");
         Tomek.getValueALLCars();
+        System.out.println("---B4 SORT---");
+        Tomek.getAllCars();
 
-
+        System.out.println("---AFTER SORT---");
+        Tomek.sortCars();
+        Tomek.getAllCars();
     }
 }
