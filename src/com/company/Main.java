@@ -2,9 +2,7 @@ package com.company;
 
 import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
-import com.company.devices.Diesel;
-import com.company.devices.Electric;
-import com.company.devices.LPG;
+import com.company.devices.*;
 
 public class Main {
 
@@ -176,5 +174,33 @@ public class Main {
         System.out.println("---AFTER SORT---");
         Tomek.sortCars();
         Tomek.getAllCars();
+
+
+        System.out.println("---------------ZADANIE 13-------------------");
+
+        Phone Iphone = new Phone("X", "Iphone", 7.0, 2019);
+        Tomek.setPhone(Iphone);
+
+        Application pubg = new Application("pubg", 2.5, 100.0);
+        Application messanger = new Application("messanger", 61.0, 23.0);
+        Application snapchat = new Application("snapchat", 31.1, 0.0);
+        Application free = new Application("free", 31.1, 0.0);
+        Application millioner = new Application("millioner", 31.1, 5516132.0);
+        Application poormillioner = new Application("poormillioner", 31.1, 155.0);
+        Application notinstalled = new Application("notinstalled", 2.5, 0.0);
+
+        Iphone.installAnApp(pubg);
+        Iphone.installAnApp(snapchat);
+        Iphone.installAnApp(free);
+        Iphone.installAnApp(millioner);
+        Iphone.installAnApp(poormillioner);
+
+
+        System.out.println(Iphone.alreadyInstalled(pubg));
+        System.out.println(Iphone.alreadyInstalled("notinstalled"));
+
+        Iphone.totalValueOfApps();
+        Iphone.ALLfreeApps();
+
     }
 }

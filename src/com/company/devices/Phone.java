@@ -1,5 +1,11 @@
 package com.company.devices;
 
+import com.company.Human;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Phone extends Device {
     public Double screenSize;
     static final String SERVERADDRESS = "xyz.local";
@@ -7,6 +13,9 @@ public class Phone extends Device {
     static final double VERSIONAPP = 1.1;
     String nameOfApliaction = "XYZ";
 
+    private Human ownerOfPhone;
+
+    private List<Application> applicationsDevice = new ArrayList<>();
 
     public Phone(String model, String producer, double screenSize, int yearOfProduction) {
         super(producer, model, yearOfProduction);
@@ -16,7 +25,7 @@ public class Phone extends Device {
 
     @Override
     public void turnOn() {
-
+        System.out.println("Phone is turning on.");
     }
 
 //    @Override
@@ -37,32 +46,97 @@ public class Phone extends Device {
 //        }
 //    }
 
-    public void installAnApp(String nameOfApliaction) {
+//    public void installAnApp(String nameOfApliaction) {
+//
+//        System.out.println("Only name of Aplication");
+//    }
+//
+//    public void installAnAPP(String nameOfApliaction, double versionApp) {
+//
+//        System.out.println("Name of Aplication + Version App");
+//    }
+//
+//    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress) {
+//
+//        System.out.println("Name of Aplication + Version App + server address");
+//    }
+//
+//    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort) {
+//
+//        System.out.println("Name of Aplication + Version App + server address + server port");
+//    }
+//
+//    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort, URL url) {
+//
+//        System.out.println("Name of Aplication + Version App + server address + server port + url");
+//    }
+//
+//    class URL {
+//
+//    }
 
-        System.out.println("Only name of Aplication");
+
+    public Human getOwnerOfPhone() {
+        return ownerOfPhone;
     }
 
-    public void installAnAPP(String nameOfApliaction, double versionApp) {
+    public void setOwnerOfPhone(Human owner) {
+        this.ownerOfPhone = owner;
 
-        System.out.println("Name of Aplication + Version App");
     }
 
-    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress) {
 
-        System.out.println("Name of Aplication + Version App + server address");
+    public void installAnApp(Application application) {
+        if (this.getOwnerOfPhone() == null) {
+            System.out.println("You dont have phone.");
+
+        } else if (this.getOwnerOfPhone().cash < application.priceOfApplication) {
+            System.out.println("Not money for this app.");
+
+        } else {
+            getOwnerOfPhone().cash -= application.priceOfApplication;
+            System.out.println("Application bought.");
+
+            this.applicationsDevice.add(application);
+        }
     }
 
-    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort) {
+    public boolean alreadyInstalled(Application application) {
+        return this.applicationsDevice.contains(application);
 
-        System.out.println("Name of Aplication + Version App + server address + server port");
     }
 
-    public void installAnAPP(String nameOfApliaction, double versionApp, String serverAddress, int serverPort, URL url) {
+    public boolean alreadyInstalled(String TEMPnameofapplication) {
 
-        System.out.println("Name of Aplication + Version App + server address + server port + url");
+        for (Application application : this.applicationsDevice) {
+            if (application.nameOfApplication.equals(TEMPnameofapplication))
+
+                return true;
+        }
+
+        return false;
+
     }
 
-    class URL {
+    public void ALLfreeApps() {
+        for (Application application : this.applicationsDevice) {
+
+            if (application.priceOfApplication == 0.0) {
+                System.out.println("Free installed app: " + application.nameOfApplication);
+
+            }
+        }
+    }
+
+    public void totalValueOfApps() {
+        Double valueTEMP = 0.0;
+        for (Application application : this.applicationsDevice) {
+
+            valueTEMP += application.priceOfApplication;
+
+        }
+        System.out.println("Total value of your applications: " + valueTEMP);
+
 
     }
 

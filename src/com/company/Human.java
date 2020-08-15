@@ -11,7 +11,7 @@ public class Human extends Animal {
     public Animal pet;
     public String firstName;
     String lastName;
-    public Phone phone;
+    private Phone phone;
 
     public Car[] garage;
 
@@ -123,7 +123,15 @@ public class Human extends Animal {
         });
     }
 
-//
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+        phone.setOwnerOfPhone(this);
+    }
+
 
 }
 
