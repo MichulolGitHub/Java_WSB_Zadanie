@@ -84,6 +84,7 @@ public class Human extends Animal {
 
     public void setCar(Car car, int numberParking) {
         this.garage[numberParking] = car;
+        car.carOwner.add(this);
 
 //
 //        if (car.value <= this.salary) {
@@ -99,6 +100,11 @@ public class Human extends Animal {
 
 
     }
+
+    public void setCarWOLIST(Car car, int numberParking) {
+        this.garage[numberParking] = car;
+    }
+
 
     public void sell() throws Exception {
         throw new Exception("Nie mozliwa jest sprzedaz");
@@ -132,6 +138,9 @@ public class Human extends Animal {
         phone.setOwnerOfPhone(this);
     }
 
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 
 }
 

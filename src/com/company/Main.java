@@ -202,5 +202,23 @@ public class Main {
         Iphone.totalValueOfApps();
         Iphone.ALLfreeApps();
 
+
+        System.out.println("---------------ZADANIE 12-------------------");
+
+
+        Human buyer1 = new Human("buyer1", "buyer1", 2);
+        Human seller1 = new Human("seller1", "seller1", 2);
+
+        Car ELPEGIE = new LPG("test1", "test1", 2010, 1.11);
+        seller1.setCar(ELPEGIE, 0);
+
+        System.out.print("Last owner of car: " + ELPEGIE + " is: ");
+        ELPEGIE.lastOwner();
+
+        ELPEGIE.sell(seller1, buyer1, ELPEGIE.value, 1);
+
+        System.out.print("Last owner of car: " + ELPEGIE + " is: ");
+        ELPEGIE.lastOwner();
+
     }
 }
