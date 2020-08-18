@@ -74,6 +74,10 @@ public class Human extends Animal {
 
     }
 
+    public Car getCarv2(int numberParking) {
+        return this.garage[numberParking];
+    }
+
     public void getAllCars() {
         int tempGarageLenght = this.garage.length;
         for (int i = 0; i < tempGarageLenght; i++) {

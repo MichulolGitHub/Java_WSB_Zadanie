@@ -41,7 +41,7 @@ public abstract class Car extends Device {
 
     public void sell(Human seller, Human buyer, Double price, int parkingSpace) throws Exception {
 
-        if (carOwner.get(carOwner.size() - 1) == seller) {
+        if (seller.getCarv2(parkingSpace) == this || carOwner.get(carOwner.size() - 1) == seller) {
             if (seller.cash >= price) {
                 buyer.cash -= price;
                 buyer.setCar(this, parkingSpace);
@@ -64,6 +64,27 @@ public abstract class Car extends Device {
         Human last = carOwner.get(carOwner.size() - 1);
         System.out.println(last);
 
+    }
+
+    public void anyOwner() {
+
+        if (carOwner != null && carOwner.size() >= 2) {
+            System.out.print("This car is used by: ");
+            lastOwner();
+        } else {
+            System.out.println("This car is new.");
+        }
+    }
+
+    public void howManyTrans() {
+        int tempnumber = carOwner.size() - 1;
+
+
+        if (tempnumber == -1) {
+            System.out.println("This car has not got any transaction history");
+        } else {
+            System.out.println("This car was sold about: " + tempnumber);
+        }
     }
 
 }

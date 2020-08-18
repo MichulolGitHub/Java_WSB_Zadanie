@@ -220,5 +220,13 @@ public class Main {
         System.out.print("Last owner of car: " + ELPEGIE + " is: ");
         ELPEGIE.lastOwner();
 
+
+        ELPEGIE.anyOwner();
+
+        Car ELPEGIE1 = new LPG("test1", "test1", 2010, 1.11);
+        ELPEGIE1.anyOwner();
+
+        ELPEGIE1.howManyTrans();
+        ELPEGIE.howManyTrans();
     }
 }
