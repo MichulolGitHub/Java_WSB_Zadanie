@@ -228,5 +228,6 @@ public class Main {
 
         ELPEGIE1.howManyTrans();
         ELPEGIE.howManyTrans();
+
     }
 }
